@@ -3,3 +3,14 @@
 ################################################################################
 
 /Implementation/bin
+/DesignPatterns/bin/Debug
+/DesignPatterns/obj/Debug
+/Implementation/obj/Debug
+/.vs
+/Implementation.Tests/bin/Debug
+/Implementation.Tests/obj/Debug
+/packages
+/Implementation/Scripts
+/Implementation/fonts
+/Implementation/Content/bootstrap.css
+/Implementation/Content/bootstrap.min.css
