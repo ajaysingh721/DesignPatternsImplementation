@@ -29,5 +29,8 @@ namespace Implementation.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Employee_Type> EmployeeTypes { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }

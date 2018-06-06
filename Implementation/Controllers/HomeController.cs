@@ -3,15 +3,8 @@ using System.Web.Mvc;
 
 namespace Implementation.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private readonly ILog _ILog;
-
-        public HomeController()
-        {
-            _ILog = Log.GetInstance;
-        }
-
         public ActionResult Index()
         {
             return View();
@@ -30,12 +23,6 @@ namespace Implementation.Controllers
 
             return View();
         }
-
-        protected override void OnException(ExceptionContext filterContext)
-        {
-            _ILog.Error(filterContext.Exception.ToString());
-            filterContext.ExceptionHandled = true;
-            this.View("Error").ExecuteResult(this.ControllerContext);
-        }
+ 
     }
 }

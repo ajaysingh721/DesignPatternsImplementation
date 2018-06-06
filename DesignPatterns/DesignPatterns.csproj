@@ -40,11 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creational\SimpleFactory\Factory\EmployeeManagerFactory.cs" />
+    <Compile Include="Creational\SimpleFactory\Manager\PermanentEmployeeManager.cs" />
+    <Compile Include="Creational\SimpleFactory\Manager\ContractEmployeeManager.cs" />
+    <Compile Include="Creational\SimpleFactory\Manager\IEmployeeManager.cs" />
     <Compile Include="Creational\Singleton\FileWritter.cs" />
     <Compile Include="Creational\Singleton\ILog.cs" />
     <Compile Include="Creational\Singleton\Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
