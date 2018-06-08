@@ -40,6 +40,7 @@ namespace Implementation.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            ViewBag.EmployeeTypes = db.EmployeeTypes.ToList();
             return View();
         }
 
@@ -48,15 +49,14 @@ namespace Implementation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,JobDescription,ContactNumber,Department,HourlyPay,Bonus")] Employee employee)
+        public ActionResult Create([Bind(Include = "Name,JobDescription,Number,Department,HourlyPay,Bonus,EmployeeTypeID")] Employee employee)
         {
             if (ModelState.IsValid)
             {
                 EmployeeManagerFactory empFactory = new EmployeeManagerFactory();
-                IEmployeeManager empManager = empFactory.GetEmployeeManager(employee.EmployeeTypeId);
+                IEmployeeManager empManager = empFactory.GetEmployeeManager(employee.EmployeeTypeID);
                 employee.Bonus = empManager.GetBonus();
                 employee.HourlyPay = empManager.GetPay();
-
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -13,7 +13,11 @@ namespace DesignPatterns.Creational.Singleton
         {
 
             string fileName = string.Format("{0}_{1}.log", logType.ToString(), DateTime.Now.ToShortDateString());
-            string logFilePath = string.Format(@"{0}\{1}", AppDomain.CurrentDomain.BaseDirectory, fileName);
+            string folderPath = AppDomain.CurrentDomain.BaseDirectory + @"\Logs";
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+            string logFilePath = string.Format(@"{0}\{1}", folderPath, fileName);
+
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("----------------------------------------");
             sb.AppendLine(DateTime.Now.ToString());

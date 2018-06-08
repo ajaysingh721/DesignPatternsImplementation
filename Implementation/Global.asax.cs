@@ -24,7 +24,7 @@ namespace Implementation
         }
     }
 
-    public class ApplicationContextSeedInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    public class ApplicationContextSeedInitializer :  DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
