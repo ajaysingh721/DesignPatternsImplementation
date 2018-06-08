@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Implementation.Models;
-using DesignPatterns.Creational.SimpleFactory.Factory;
 using DesignPatterns.Creational.SimpleFactory.Manager;
+using DesignPatterns.Creational.SimpleFactory.Factory;
 
 namespace Implementation.Controllers
 {
@@ -85,7 +81,7 @@ namespace Implementation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,JobDescription,ContactNumber,Department,HourlyPay,Bonus")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,Name,JobDescription,Number,Department,HourlyPay,Bonus")] Employee employee)
         {
             if (ModelState.IsValid)
             {
