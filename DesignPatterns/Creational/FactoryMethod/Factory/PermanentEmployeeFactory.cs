@@ -7,13 +7,13 @@ namespace DesignPatterns.Creational.FactoryMethod.Factory
     public class PermanentEmployeeFactory : BaseEmployeeFactory
     {
 
-        public PermanentEmployeeFactory(Employee emp) : base(emp)
+        public PermanentEmployeeFactory(IEmployee emp) : base(emp)
         {
         }
 
         public override IEmployeeManager Create()
         {
-            PermanentEmployeeManager manager = new PermanentEmployeeFactory();
+            PermanentEmployeeManager manager = new PermanentEmployeeManager();
             _emp.HouseAllowance = manager.GetHouseAllowance();
             return manager;
         }

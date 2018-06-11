@@ -1,16 +1,16 @@
 ﻿namespace DesignPatterns.Models
 {
-    public partial class Employee
+    public interface IEmployee
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string JobDescription { get; set; }
-        public string Number { get; set; }
-        public string Department { get; set; }
-        public decimal HourlyPay { get; set; }
-        public decimal Bonus { get; set; }
-        public decimal HouseAllowance { get; set; }
-        public decimal MedicalAllowance { get; set; }
-        public int EmployeeTypeID { get; set; }
+        int Id { get; set; }
+        string Name { get; set; }
+        string JobDescription { get; set; }
+        string Number { get; set; }
+        string Department { get; set; }
+        decimal HourlyPay { get; set; }
+        decimal Bonus { get; set; }
+        decimal HouseAllowance { get; set; }
+        decimal MedicalAllowance { get; set; }
+        int EmployeeTypeID { get; set; }
     }
 }

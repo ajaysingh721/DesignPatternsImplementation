@@ -185,7 +185,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\EmployeeViewModels1.cs" />
+    <Compile Include="Models\EmployeeViewModels.cs" />
     <Compile Include="Models\Employee_Type.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

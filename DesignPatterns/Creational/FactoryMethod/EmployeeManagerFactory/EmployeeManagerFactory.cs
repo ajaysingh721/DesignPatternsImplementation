@@ -1,11 +1,13 @@
-﻿using DesignPatterns.Creational.FactoryMethod.Factory;
+﻿using System;
+using DesignPatterns.Creational.FactoryMethod.Factory;
+using DesignPatterns.Creational.FactoryMethod.Manager;
 using DesignPatterns.Models;
 
 namespace DesignPatterns.Creational.FactoryMethod.EmployeeManagerFactory
 {
     public class EmployeeManagerFactory
     {
-        public BaseEmployeeFactory CreateFactory(Employee emp)
+        public BaseEmployeeFactory CreateFactory(IEmployee emp)
         {
             BaseEmployeeFactory returnValue = null;
             if (emp.EmployeeTypeID == 1)
@@ -18,5 +20,6 @@ namespace DesignPatterns.Creational.FactoryMethod.EmployeeManagerFactory
             }
             return returnValue;
         }
+        
     }
 }

@@ -5,12 +5,12 @@ namespace DesignPatterns.Creational.FactoryMethod.Factory
 {  
     public abstract class BaseEmployeeFactory
     {
-        protected Employee _emp;
-        public BaseEmployeeFactory(Employee emp)
+        protected IEmployee _emp;
+        public BaseEmployeeFactory(IEmployee emp)
         {
             _emp = emp;
         }
-        public Employee ApplySalary()
+        public IEmployee ApplySalary()
         {
             IEmployeeManager manager = this.Create();
             _emp.Bonus = manager.GetBonus();

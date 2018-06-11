@@ -3,8 +3,10 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Implementation.Models;
-using DesignPatterns.Creational.SimpleFactory.Manager;
-using DesignPatterns.Creational.SimpleFactory.Factory;
+using DesignPatterns.Creational.FactoryMethod.Manager;
+using DesignPatterns.Creational.FactoryMethod.Factory;
+using DesignPatterns.Creational.FactoryMethod.EmployeeManagerFactory;
+using DesignPatterns.Models;
 
 namespace Implementation.Controllers
 {
@@ -50,9 +52,7 @@ namespace Implementation.Controllers
             if (ModelState.IsValid)
             {
                 EmployeeManagerFactory empFactory = new EmployeeManagerFactory();
-                IEmployeeManager empManager = empFactory.GetEmployeeManager(employee.EmployeeTypeID);
-                employee.Bonus = empManager.GetBonus();
-                employee.HourlyPay = empManager.GetPay();
+                IEmployeeManager empManager = empFactory.CreateFactory(employee).Create();
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
