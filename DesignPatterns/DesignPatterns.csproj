@@ -40,6 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creational\AbstractFactory\Factory\Apple.cs" />
+    <Compile Include="Creational\AbstractFactory\Factory\Dell.cs" />
+    <Compile Include="Creational\AbstractFactory\Factory\IBrand.cs" />
+    <Compile Include="Creational\AbstractFactory\Factory\IProcessor.cs" />
+    <Compile Include="Creational\AbstractFactory\Factory\ISystemType.cs" />
+    <Compile Include="Creational\AbstractFactory\Factory\Desktop.cs" />
+    <Compile Include="Creational\AbstractFactory\Factory\Laptop.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\BaseEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\ContractEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\EmployeeManagerFactory\EmployeeManagerFactory.cs" />
@@ -54,13 +61,14 @@
     <Compile Include="Creational\Singleton\FileWritter.cs" />
     <Compile Include="Creational\Singleton\ILog.cs" />
     <Compile Include="Creational\Singleton\Log.cs" />
+    <Compile Include="Enums\Brand.cs" />
+    <Compile Include="Enums\ComputerType.cs" />
+    <Compile Include="Enums\Processors.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Employee_Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Creational\AbstractFactory\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

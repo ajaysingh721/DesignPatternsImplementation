@@ -47,7 +47,7 @@ namespace Implementation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,JobDescription,Number,Department,HourlyPay,Bonus,EmployeeTypeID")] Employee employee)
+        public ActionResult Create([Bind(Include = "Name,JobDescription,Number,Department,HourlyPay,Bonus,EmployeeTypeID,HouseAllowance,MedicalAllowance")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace Implementation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,JobDescription,Number,Department,HourlyPay,Bonus")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,Name,JobDescription,Number,Department,HourlyPay,Bonus,HouseAllowance,MedicalAllowance")] Employee employee)
         {
             if (ModelState.IsValid)
             {

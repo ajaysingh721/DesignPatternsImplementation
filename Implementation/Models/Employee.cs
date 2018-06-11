@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Employee")]
-    public partial class Employee :IEmployee
+    public partial class Employee : IEmployee
     {
         public int Id { get; set; }
 
@@ -30,11 +30,14 @@
 
         [Required]
         public decimal Bonus { get; set; }
-
+        
         public decimal HouseAllowance { get; set; }
 
         public decimal MedicalAllowance { get; set; }
-        
+
+        [StringLength(250)]
+        public string ComputerDetails { get; set; }
+
 
         public int EmployeeTypeID { get; set; }
 

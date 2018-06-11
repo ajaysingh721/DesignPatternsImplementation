@@ -12,5 +12,6 @@
         decimal HouseAllowance { get; set; }
         decimal MedicalAllowance { get; set; }
         int EmployeeTypeID { get; set; }
+        string ComputerDetails { get; set; }
     }
 }
