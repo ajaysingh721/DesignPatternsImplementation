@@ -8,6 +8,6 @@ namespace DesignPatterns.Enums
 {
     public enum ComputerType
     {
-        Desktop, Laptop
+        Desktop, Laptop, iMac, MacBook
     }
 }

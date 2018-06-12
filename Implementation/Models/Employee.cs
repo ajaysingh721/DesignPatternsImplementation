@@ -1,10 +1,9 @@
 ﻿namespace Implementation.Models
 {
-    using DesignPatterns.Models;
+    using DesignPatterns.Interfaces;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Employee")]
     public partial class Employee : IEmployee
     {
         public int Id { get; set; }
@@ -41,6 +40,6 @@
 
         public int EmployeeTypeID { get; set; }
 
-        public virtual Employee_Type Employee_Type { get; set; }
+        public virtual EmployeeType Employee_Type { get; set; }
     }
 }

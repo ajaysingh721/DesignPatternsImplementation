@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Models
+﻿namespace DesignPatterns.Interfaces
 {
     public interface IEmployee
     {

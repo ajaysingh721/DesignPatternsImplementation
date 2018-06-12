@@ -1,7 +1,6 @@
 ﻿using System;
 using DesignPatterns.Creational.FactoryMethod.Factory;
-using DesignPatterns.Creational.FactoryMethod.Manager;
-using DesignPatterns.Models;
+using DesignPatterns.Interfaces;
 
 namespace DesignPatterns.Creational.FactoryMethod.EmployeeManagerFactory
 {

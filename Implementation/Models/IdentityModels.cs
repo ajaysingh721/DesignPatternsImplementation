@@ -30,7 +30,8 @@ namespace Implementation.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Employee_Type> EmployeeTypes { get; set; }
+        public DbSet<EmployeeType> EmployeeTypes { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Question> Questions { get; set; }
     }
 }

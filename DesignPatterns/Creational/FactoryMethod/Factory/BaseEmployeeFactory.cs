@@ -1,8 +1,9 @@
-﻿using DesignPatterns.Creational.FactoryMethod.Manager;
-using DesignPatterns.Models;
-
+﻿
 namespace DesignPatterns.Creational.FactoryMethod.Factory
-{  
+{
+    using Manager;
+    using Interfaces;
+
     public abstract class BaseEmployeeFactory
     {
         protected IEmployee _emp;

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Creational.AbstractFactory.Factory
+namespace DesignPatterns.Enums
 {
-    public interface ISystemType
+    public enum QuestionType
     {
-        string GetSystemType();
+        TextBox, TextArea, Email, Numeric, Dropdown, Choice, MultiChoice
     }
 }

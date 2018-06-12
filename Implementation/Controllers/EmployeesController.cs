@@ -1,15 +1,16 @@
-﻿using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web.Mvc;
-using Implementation.Models;
-using DesignPatterns.Creational.FactoryMethod.Manager;
-using DesignPatterns.Creational.FactoryMethod.Factory;
-using DesignPatterns.Creational.FactoryMethod.EmployeeManagerFactory;
-using DesignPatterns.Models;
-
-namespace Implementation.Controllers
+﻿namespace Implementation.Controllers
 {
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Net;
+    using System.Web.Mvc;
+    using Models;
+    using DesignPatterns.Creational.FactoryMethod.Factory;
+    using DesignPatterns.Creational.FactoryMethod.EmployeeManagerFactory;
+    using DesignPatterns.Creational.AbstractFactory;
+    using DesignPatterns.Creational.AbstractFactory.Manager;
+    using DesignPatterns.Creational.AbstractFactory.ConcreteFactory;
+
     public class EmployeesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -38,7 +39,7 @@ namespace Implementation.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
-            ViewBag.EmployeeTypes = db.EmployeeTypes.ToList();
+            ViewBag.TypeOfEmployees = db.EmployeeTypes.ToList();
             return View();
         }
 
@@ -51,8 +52,12 @@ namespace Implementation.Controllers
         {
             if (ModelState.IsValid)
             {
-                EmployeeManagerFactory empFactory = new EmployeeManagerFactory();
-                IEmployeeManager empManager = empFactory.CreateFactory(employee).Create();
+                BaseEmployeeFactory empFactory = new EmployeeManagerFactory().CreateFactory(employee);
+                empFactory.ApplySalary();
+                IComputerFactory factory = new EmployeeSystemFactory().Create(employee);
+                EmployeeSystemManager manager = new EmployeeSystemManager(factory);
+                employee.ComputerDetails = manager.GetSystemDetails();
+
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -81,10 +86,16 @@ namespace Implementation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,JobDescription,Number,Department,HourlyPay,Bonus,HouseAllowance,MedicalAllowance")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,Name,JobDescription,Number,Department,HourlyPay,Bonus,EmployeeTypeID,HouseAllowance,MedicalAllowance")] Employee employee)
         {
             if (ModelState.IsValid)
             {
+                BaseEmployeeFactory empFactory = new EmployeeManagerFactory().CreateFactory(employee);
+                empFactory.ApplySalary();
+                IComputerFactory factory = new EmployeeSystemFactory().Create(employee);
+                EmployeeSystemManager manager = new EmployeeSystemManager(factory);
+                employee.ComputerDetails = manager.GetSystemDetails();
+
                 db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

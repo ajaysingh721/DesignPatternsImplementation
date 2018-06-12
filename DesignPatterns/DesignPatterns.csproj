@@ -40,13 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creational\AbstractFactory\Factory\Apple.cs" />
-    <Compile Include="Creational\AbstractFactory\Factory\Dell.cs" />
-    <Compile Include="Creational\AbstractFactory\Factory\IBrand.cs" />
-    <Compile Include="Creational\AbstractFactory\Factory\IProcessor.cs" />
-    <Compile Include="Creational\AbstractFactory\Factory\ISystemType.cs" />
-    <Compile Include="Creational\AbstractFactory\Factory\Desktop.cs" />
-    <Compile Include="Creational\AbstractFactory\Factory\Laptop.cs" />
+    <Compile Include="Creational\AbstractFactory\ConcreteFactory\AppleFactory.cs" />
+    <Compile Include="Creational\AbstractFactory\ConcreteFactory\DellFactory.cs" />
+    <Compile Include="Creational\AbstractFactory\ConcreteFactory\EmployeeSystemFactory.cs" />
+    <Compile Include="Creational\AbstractFactory\ConcreteProduct\ComputerBrand.cs" />
+    <Compile Include="Creational\AbstractFactory\ConcreteProduct\ComputerSystemType.cs" />
+    <Compile Include="Creational\AbstractFactory\AbstructProduct\IBrand.cs" />
+    <Compile Include="Creational\AbstractFactory\AbstructProduct\IProcessor.cs" />
+    <Compile Include="Creational\AbstractFactory\AbstructProduct\ISystemType.cs" />
+    <Compile Include="Creational\AbstractFactory\ConcreteProduct\ComputerProcessor.cs" />
+    <Compile Include="Creational\AbstractFactory\IComputerFactory.cs" />
+    <Compile Include="Creational\AbstractFactory\Manager\EmployeeSystemManager.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\BaseEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\ContractEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\EmployeeManagerFactory\EmployeeManagerFactory.cs" />
@@ -64,8 +68,10 @@
     <Compile Include="Enums\Brand.cs" />
     <Compile Include="Enums\ComputerType.cs" />
     <Compile Include="Enums\Processors.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\Employee_Type.cs" />
+    <Compile Include="Enums\QuestionType.cs" />
+    <Compile Include="Interfaces\IEmployee.cs" />
+    <Compile Include="Interfaces\IEmployeeType.cs" />
+    <Compile Include="Interfaces\IQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

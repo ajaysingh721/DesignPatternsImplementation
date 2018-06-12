@@ -28,14 +28,14 @@ namespace Implementation
     {
         protected override void Seed(ApplicationDbContext context)
         {
-            Employee_Type type1 = new Employee_Type()
+            EmployeeType type1 = new EmployeeType()
             {
-                EmployeeType = "Peremanent Employee"
+                TypeOfEmployee = "Peremanent Employee"
             };
 
-            Employee_Type type2 = new Employee_Type()
+            EmployeeType type2 = new EmployeeType()
             {
-                EmployeeType = "Contract Employee"
+                TypeOfEmployee = "Contract Employee"
             };
 
             context.EmployeeTypes.Add(type1);
