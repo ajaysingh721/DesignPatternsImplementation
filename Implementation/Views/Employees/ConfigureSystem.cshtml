@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "System Configuration";
+}
+
+<h2>System Configuration</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Employee</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.Partial("_CommonSysConfig");
+        @{
+            if (ViewBag.JobDescription.toUpper() == "MANAGER")
+            {
+                <div class="form-group">
+                    @Html.Label("Touch Enbled", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="col-md-1">
+                            <label>@Html.RadioButton("TouchScreen", "Yes", false, htmlAttributes: new { @class = "radio-inline" }) YES</label>
+
+
+                        </div>
+                        <div class="col-md-1">
+                            <label>@Html.RadioButton("TouchScreen", "NO", false, htmlAttributes: new { @class = "radio-inline" }) NO</label>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    @Html.Label("Mouse", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("Mouse",
+                     new List<SelectListItem>() {
+                     new  SelectListItem (){  Text = "Select", Value="Select"},
+                     new  SelectListItem (){  Text = "WireLess", Value="USB-WireLess"},
+                     new  SelectListItem (){  Text = "Regular-USB", Value="USB"},
+               }, htmlAttributes: new { @class = "form-control" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("KeyBoard", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("Keyboard",
+                    new List<SelectListItem>() {
+                    new  SelectListItem (){  Text = "Select", Value="Select"},
+                    new  SelectListItem (){  Text = "Wireless", Value="Wireless"},
+                    new  SelectListItem (){  Text = "Regular-USB", Value="Regular-USB"},
+               }, htmlAttributes: new { @class = "form-control" })
+
+                    </div>
+                </div>
+            }
+
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add SysConfiguration" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+            }
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -10,27 +10,42 @@
     using DesignPatterns.Creational.AbstractFactory;
     using DesignPatterns.Creational.AbstractFactory.Manager;
     using DesignPatterns.Creational.AbstractFactory.ConcreteFactory;
-    using Services.Builder;
+    using DesignPatterns.Creational.Builder.IBuilder;
+    using DesignPatterns.Creational.Builder.Director;
+    using System;
+    using DesignPatterns.Creational.Builder.Product;
+    using DesignPatterns.Creational.Builder;
+    using Services.Factory;
 
     public class EmployeesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: BuildSystem
+        // GET: ConfigureSystem
         [HttpGet]
-        public ActionResult BuildSystem(int? id)
+        public ActionResult ConfigureSystem(int? id)
         {
+            Employee employee = db.Employees.Find(id);
+            ViewBag.JobDescription = employee.JobDescription;
+
             return View(id);
         }
 
 
-        // GET: BuildSystem
+        // POST: ConfigureSystem
         [HttpPost]
-        public ActionResult BuildSystem(int id, string RAM, string HDD)
+        public ActionResult ConfigureSystem(FormCollection formCollection)
         {
-            Employee employee = db.Employees.Find(id);
-            ComputerSystem computerSystem = new ComputerSystem(RAM, HDD);
-            employee.SystemConfigurationDetails = computerSystem.Build();
+            //Step 1
+            Employee employee = db.Employees.Find(Convert.ToInt32(formCollection["id"]));
+            //Step 2 Concrete Builder
+            ISystemBuilder systemBuilder = new SystemConfigutarionManagerFactory().GetSystemConfiguration(employee);
+            //Step 3 Director
+            SystemConfigurationBuilder builder = new SystemConfigurationBuilder();
+            builder.BuildSystem(systemBuilder, formCollection);
+            //Step 4 return the system
+            ComputerSystem system = systemBuilder.GetSystem();
+            employee.SystemConfigurationDetails = string.Format("RAM : {0}, HDDSize : {1}, Keyboard: {2}, Mouse : {3}", system.RAM, system.HDD, system.Keyboard, system.Mouse);
             db.Entry(employee).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");

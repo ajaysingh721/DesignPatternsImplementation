@@ -1,0 +1,26 @@
+﻿<div class="form-group">
+    @Html.Label("Memory", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("RAM", new List<SelectListItem>(){
+                    new SelectListItem() { Text="Select",Value="" },
+                    new SelectListItem() { Text = "2 GB", Value = "2GB" },
+                    new SelectListItem() { Text = "4 GB", Value = "4GB" },
+                    new SelectListItem() { Text = "8 GB", Value = "8GB" }
+                }, new { @class = "form-control" })
+        @Html.ValidationMessage("RAM", "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.Label("HD Drive", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("HDD", new List<SelectListItem>(){
+                    new SelectListItem() { Text="Select",Value="" },
+                    new SelectListItem() { Text = "250 GB", Value = "250GB" },
+                    new SelectListItem() { Text = "500 GB", Value = "500GB" },
+                    new SelectListItem() { Text = "1 TB", Value = "1TB" }
+
+                }, new { @class = "form-control" })
+        @Html.ValidationMessage("HDD", "", new { @class = "text-danger" })
+    </div>
+</div>
