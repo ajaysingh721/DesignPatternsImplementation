@@ -13,5 +13,7 @@
         decimal MedicalAllowance { get; set; }
         int EmployeeTypeID { get; set; }
         string ComputerDetails { get; set; }
+        string SystemConfigurationDetails { get; set; }
+        
     }
 }

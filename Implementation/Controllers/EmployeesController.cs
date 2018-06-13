@@ -10,10 +10,31 @@
     using DesignPatterns.Creational.AbstractFactory;
     using DesignPatterns.Creational.AbstractFactory.Manager;
     using DesignPatterns.Creational.AbstractFactory.ConcreteFactory;
+    using Services.Builder;
 
     public class EmployeesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        // GET: BuildSystem
+        [HttpGet]
+        public ActionResult BuildSystem(int? id)
+        {
+            return View(id);
+        }
+
+
+        // GET: BuildSystem
+        [HttpPost]
+        public ActionResult BuildSystem(int id, string RAM, string HDD)
+        {
+            Employee employee = db.Employees.Find(id);
+            ComputerSystem computerSystem = new ComputerSystem(RAM, HDD);
+            employee.SystemConfigurationDetails = computerSystem.Build();
+            db.Entry(employee).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         // GET: Employees
         public ActionResult Index()

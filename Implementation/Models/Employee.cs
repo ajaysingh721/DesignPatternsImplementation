@@ -37,6 +37,8 @@
         [StringLength(250)]
         public string ComputerDetails { get; set; }
 
+        [StringLength(500)]
+        public string SystemConfigurationDetails { get; set; }
 
         public int EmployeeTypeID { get; set; }
 
