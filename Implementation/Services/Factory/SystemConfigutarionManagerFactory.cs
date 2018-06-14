@@ -2,8 +2,8 @@
 
 namespace Implementation.Services.Factory
 {
+    using DesignPatterns.Creational.Builder.ConcreteBuilder;
     using DesignPatterns.Creational.Builder.IBuilder;
-    using DesignPatterns.Creational.Builder.Product;
     using Models;
 
     public class SystemConfigutarionManagerFactory

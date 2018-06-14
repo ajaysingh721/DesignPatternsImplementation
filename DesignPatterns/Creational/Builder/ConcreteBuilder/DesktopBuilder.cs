@@ -1,7 +1,8 @@
 ﻿
-namespace DesignPatterns.Creational.Builder.Product
+namespace DesignPatterns.Creational.Builder.ConcreteBuilder
 {
     using IBuilder;
+    using Product;
 
     public class DesktopBuilder : ISystemBuilder
     {

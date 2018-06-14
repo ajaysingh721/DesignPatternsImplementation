@@ -53,9 +53,9 @@
     <Compile Include="Creational\AbstractFactory\Manager\EmployeeSystemManager.cs" />
     <Compile Include="Creational\Builder\Director\SystemConfigurationBuilder.cs" />
     <Compile Include="Creational\Builder\IBuilder\ISystemBuilder.cs" />
-    <Compile Include="Creational\Builder\ComputerSystem.cs" />
-    <Compile Include="Creational\Builder\Product\DesktopBuilder.cs" />
-    <Compile Include="Creational\Builder\Product\LaptopBuilder.cs" />
+    <Compile Include="Creational\Builder\Product\ComputerSystem.cs" />
+    <Compile Include="Creational\Builder\ConcreteBuilder\DesktopBuilder.cs" />
+    <Compile Include="Creational\Builder\ConcreteBuilder\LaptopBuilder.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\BaseEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\ContractEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\EmployeeManagerFactory\EmployeeManagerFactory.cs" />

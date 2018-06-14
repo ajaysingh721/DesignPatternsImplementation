@@ -3,6 +3,7 @@ namespace DesignPatterns.Interfaces
 {
 
     using Enums;
+    using System.Collections.Generic;
 
     public interface IQuestion<T>
     {
@@ -14,5 +15,6 @@ namespace DesignPatterns.Interfaces
         string RegEx { get; set; }
         int Order { get; set; }
         QuestionType ControlType { get; set; }
+        ICollection<IQuestionnire> Questionnires { get; set; }
     }
 }

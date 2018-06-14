@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace DesignPatterns.Creational.Builder
+namespace DesignPatterns.Creational.Builder.Product
 {
     public class ComputerSystem
     {

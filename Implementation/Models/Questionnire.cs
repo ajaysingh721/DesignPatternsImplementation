@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿
 namespace Implementation.Models
 {
-    public class Questionnire
+    using DesignPatterns.Interfaces;
+    using System.Collections.Generic;
+
+    public class Questionnire : IQuestionnire
     {
-        int Id { get; set; }    
+        public Questionnire()
+        {
+            Questions = new HashSet<IQuestion<object>>();
+        }
+        public int Id { get; set; }
+        public string User { get; set; }
+        public virtual ICollection<IQuestion<object>> Questions { get; set; }
     }
 }

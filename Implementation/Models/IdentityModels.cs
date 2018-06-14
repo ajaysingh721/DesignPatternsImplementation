@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using DesignPatterns.Interfaces;
 
 namespace Implementation.Models
 {
@@ -30,8 +31,25 @@ namespace Implementation.Models
             return new ApplicationDbContext();
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //modelBuilder.Entity<IQuestionnire>()
+            //    .HasMany<IQuestion<object>>(s => s.Questions)
+            //    .WithMany(c => c.Questionnires)
+            //    .Map(cs =>
+            //            {
+            //                cs.MapLeftKey("Id");
+            //                cs.MapRightKey("Id");
+            //                cs.ToTable("QuestionQuestionnires");
+            //            });
+
+        }
+
         public DbSet<EmployeeType> EmployeeTypes { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Questionnire> Questionnires { get; set; }
     }
 }
