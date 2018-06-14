@@ -1,4 +1,5 @@
-﻿
+﻿@model Implementation.Models.Employee
+
 @{
     ViewBag.Title = "System Configuration";
 }
@@ -8,15 +9,16 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Id)
 
     <div class="form-horizontal">
         <h4>Employee</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        @Html.Partial("_CommonSysConfig");
+        @Html.Partial("_CommonSysConfig")
         @{
-            if (ViewBag.JobDescription.toUpper() == "MANAGER")
+            if (ViewBag.JobDescription.ToUpper() == "MANAGER")
             {
                 <div class="form-group">
                     @Html.Label("Touch Enbled", htmlAttributes: new { @class = "control-label col-md-2" })

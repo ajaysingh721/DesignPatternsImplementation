@@ -254,7 +254,7 @@
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Employees\ConfigureSystem.cshtml" />
-    <Content Include="Views\_CommonSysConfig.cshtml" />
+    <Content Include="Views\Employees\_CommonSysConfig.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

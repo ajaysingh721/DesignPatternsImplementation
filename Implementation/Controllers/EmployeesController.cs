@@ -28,13 +28,13 @@
             Employee employee = db.Employees.Find(id);
             ViewBag.JobDescription = employee.JobDescription;
 
-            return View(id);
+            return View(employee);
         }
 
 
         // POST: ConfigureSystem
         [HttpPost]
-        public ActionResult ConfigureSystem(FormCollection formCollection)
+        public ActionResult ConfigureSystem(FormCollection formCollection,string id)
         {
             //Step 1
             Employee employee = db.Employees.Find(Convert.ToInt32(formCollection["id"]));
