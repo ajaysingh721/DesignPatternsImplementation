@@ -10,8 +10,8 @@
     using DesignPatterns.Creational.AbstractFactory;
     using DesignPatterns.Creational.AbstractFactory.Manager;
     using DesignPatterns.Creational.AbstractFactory.ConcreteFactory;
-    using DesignPatterns.Creational.Builder.IBuilder;
-    using DesignPatterns.Creational.Builder.Director;
+    using DesignPatterns.Creational.Builder.BuildComputerProduct.IBuilder;
+    using DesignPatterns.Creational.Builder.BuildComputerProduct.Director;
     using System;
     using DesignPatterns.Creational.Builder.Product;
     using DesignPatterns.Creational.Builder;

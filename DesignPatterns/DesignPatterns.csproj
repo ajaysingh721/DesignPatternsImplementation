@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,11 +52,19 @@
     <Compile Include="Creational\AbstractFactory\ConcreteProduct\ComputerProcessor.cs" />
     <Compile Include="Creational\AbstractFactory\IComputerFactory.cs" />
     <Compile Include="Creational\AbstractFactory\Manager\EmployeeSystemManager.cs" />
-    <Compile Include="Creational\Builder\Director\SystemConfigurationBuilder.cs" />
-    <Compile Include="Creational\Builder\IBuilder\ISystemBuilder.cs" />
-    <Compile Include="Creational\Builder\Product\ComputerSystem.cs" />
-    <Compile Include="Creational\Builder\ConcreteBuilder\DesktopBuilder.cs" />
-    <Compile Include="Creational\Builder\ConcreteBuilder\LaptopBuilder.cs" />
+    <Compile Include="Creational\AbstractFactory\Udemy\Database.cs" />
+    <Compile Include="Creational\AbstractFactory\Udemy\SqlDBDatabase.cs" />
+    <Compile Include="Creational\AbstractFactory\Udemy\OleDBDatabase.cs" />
+    <Compile Include="Creational\Builder\BuildComputerProduct\Director\SystemConfigurationBuilder.cs" />
+    <Compile Include="Creational\Builder\BuildComputerProduct\IBuilder\ISystemBuilder.cs" />
+    <Compile Include="Creational\Builder\BuildComputerProduct\Product\ComputerSystem.cs" />
+    <Compile Include="Creational\Builder\BuildComputerProduct\ConcreteBuilder\DesktopBuilder.cs" />
+    <Compile Include="Creational\Builder\BuildComputerProduct\ConcreteBuilder\LaptopBuilder.cs" />
+    <Compile Include="Creational\Builder\BuildDrink\ConcreteBuilder\CoffeeBuilder.cs" />
+    <Compile Include="Creational\Builder\BuildDrink\ConcreteBuilder\TeaBuilder.cs" />
+    <Compile Include="Creational\Builder\BuildDrink\Director\DrinkMaker.cs" />
+    <Compile Include="Creational\Builder\BuildDrink\IBuilder\IDrinkBuilder.cs" />
+    <Compile Include="Creational\Builder\BuildDrink\Product\Drink.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\BaseEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\ContractEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\EmployeeManagerFactory\EmployeeManagerFactory.cs" />
@@ -63,6 +72,8 @@
     <Compile Include="Creational\FactoryMethod\Manager\IEmployeeManager.cs" />
     <Compile Include="Creational\FactoryMethod\Factory\PermanentEmployeeFactory.cs" />
     <Compile Include="Creational\FactoryMethod\Manager\PermanentEmployeeManager.cs" />
+    <Compile Include="Creational\Prototype\Address.cs" />
+    <Compile Include="Creational\Prototype\Employee.cs" />
     <Compile Include="Creational\SimpleFactory\Factory\EmployeeManagerFactory.cs" />
     <Compile Include="Creational\SimpleFactory\Manager\PermanentEmployeeManager.cs" />
     <Compile Include="Creational\SimpleFactory\Manager\ContractEmployeeManager.cs" />
